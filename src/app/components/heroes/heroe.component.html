@@ -1,5 +1,6 @@
-<h3>Héroe <small>nombre...</small></h3>
+<h3>Héroe <small>{{heroe.nombre}}</small></h3>
 <button class="btn btn-outline-danger"  [routerLink]="['heroes']" name="button">Regresar</button>
+<button type="button" class="btn btn-outline-success" (click)="agregarNuevo(forma)"  name="button">Nuevo heroe</button>
 <hr>
 
 <div class="row animated fadeIn fast">

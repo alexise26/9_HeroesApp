@@ -37,10 +37,31 @@ export class HeroesService {
 
     return this.http.put(url, body, {headers:headers}) //Hacemos el put enviando el url, el body (datos) y headers
           .map( res=>{ //Nos ayuda a transformar la data que viene
-              console.log(res.json());
+              //console.log(res.json());
               return res.json();
           })
+  }
+
+  getHeroe(key$:string){
+
+    let url = `${this.heroeUrl}/${key$}.json`;
+
+    return this.http.get(url)
+      .map(res=> res.json());
 
   }
+
+  getHeroes(){
+    return this.http.get(this.heroesUrl)
+      .map(res=> res.json());
+  }
+
+  borrarHeroe(key$:string){
+    let url =`${this.heroeUrl}/${key$}.json`;
+    return this.http.delete(url)
+        .map(res=>res.json());
+  }
+
+
 
 }
